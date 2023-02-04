@@ -12,6 +12,7 @@ More projects will be added as and when I manage to get through them and as a be
 This most recent project was created following the awesome tutorial by Akhil Sharma.
 
 - [Build A CRUD API with Golang](https://youtu.be/TkbhQQS3m_o)
+- [Using the Mux package from Gorilla](https://github.com/gorilla/mux)
 
 ## API Reference
 
@@ -20,19 +21,19 @@ This most recent project was created following the awesome tutorial by Akhil Sha
 Based on the code provided, I've created a couple of movies already.
 
 ```http
-  GET http://localhost:8000/movies
+  GET /movies
 ```
 
 #### Get movie by Id
 
 ```http
-  GET http://localhost:8000/movies/{id}
+  GET /movies/{id}
 ```
 
 #### Create a new movie
 
 ```http
-  POST http://localhost:8000/movies
+  POST /movies
 ```
 
 Provide it with a json body, such as:
@@ -52,7 +53,7 @@ Provide it with a json body, such as:
 #### Update Movie
 
 ```http
-PUT http://localhost:8000/{id}
+PUT /movies/{id}
 ```
 
 Provided with a json body of the updated fields
@@ -71,5 +72,5 @@ Provided with a json body of the updated fields
 #### Delete Movie
 
 ```http
-DELETE http://localhost:8000/{id}
+DELETE /movies/{id}
 ```
