@@ -49,7 +49,7 @@ Provide it with a json body, such as:
 
 #### Update Movie 
 ```http
-PUT movies/{id}
+PUT /movies/{id}
 ```
 Provided with a json body of the updated fields
 ```json
@@ -65,5 +65,5 @@ Provided with a json body of the updated fields
 
 #### Delete Movie
 ```http
-DELETE movies/{id}
+DELETE /movies/{id}
 ```
