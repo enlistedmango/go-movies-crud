@@ -1,3 +1,4 @@
+// In a go project, you always start with package main
 package main
 
 import (
