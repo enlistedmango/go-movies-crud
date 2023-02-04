@@ -12,7 +12,7 @@ More projects will be added as and when I manage to get through them and as a be
 This most recent project was created following the awesome tutorial by Akhil Sharma.
 
 - [Build A CRUD API with Golang](https://youtu.be/TkbhQQS3m_o)
-- [Using the Mux package from Gorilla](https://github.com/gorilla/mux)
+- [Using the Mux Package from Gorilla](https://github.com/gorilla/mux)
 
 ## API Reference
 
