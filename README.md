@@ -45,7 +45,7 @@ Provide it with a json body, such as:
   "title": "Movie Three",
   "director": {
     "firstname": "Jamie",
-    "lastname": "McCallum"
+    "lastname": "Mc"
   }
 }
 ```
