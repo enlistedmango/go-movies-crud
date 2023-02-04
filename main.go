@@ -11,6 +11,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// This will mark the struct to define movies, not that we have a pointer for Director towards the Director struct
 type Movie struct {
 	ID       string    `json:"id"`
 	Isbn     string    `json:"isbn"`
