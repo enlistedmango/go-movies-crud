@@ -1,6 +1,8 @@
 // In a go project, you always start with package main
 package main
 
+// The list below are all the packages that we'll use. These can be imported before or auto imported during the build process.
+// Any imports that are not used will be removed upon saving the program
 import (
 	"encoding/json"
 	"fmt"
@@ -12,7 +14,11 @@ import (
 	"github.com/gorilla/mux"
 )
 
-// This will mark the struct to define movies, not that we have a pointer for Director towards the Director struct
+/*
+A struct are typed collections of fields. Allowing us to group data together to form records.
+This will mark the struct to define movies, not that we have a pointer for Director towards the Director struct
+*/
+
 type Movie struct {
 	ID       string    `json:"id"`
 	Isbn     string    `json:"isbn"`
@@ -25,6 +31,7 @@ type Director struct {
 	Lastname  string `json:"lastname"`
 }
 
+// This creates us a variable called movies with an empty slice of Movie
 var movies []Movie
 
 func getMovies(w http.ResponseWriter, r *http.Request) {
@@ -79,12 +86,17 @@ func updateMovie(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// Func main is a special function, it doesn't need to be called and is the entry point of the executable program
 func main() {
+
+	// r is the variable that has also been declared to use mux.NewRouter()
 	r := mux.NewRouter()
 
+	// The two sets of movie data below uses the append method in order to add items to the slice of Movie, as mentioned above.
 	movies = append(movies, Movie{ID: "1", Isbn: "438227", Title: "Movie One", Director: &Director{Firstname: "John", Lastname: "Doe"}})
 	movies = append(movies, Movie{ID: "2", Isbn: "45455", Title: "Movie Two", Director: &Director{Firstname: "Steve", Lastname: "Smith"}})
 
+	// The HandleFunc method, provides a way to specify how requests to a specific route should be handled.
 	r.HandleFunc("/movies", getMovies).Methods("GET")
 	r.HandleFunc("/movies/{id}", getMovie).Methods("GET")
 	r.HandleFunc("/movies", createMovie).Methods("POST")
